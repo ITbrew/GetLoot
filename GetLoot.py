@@ -216,7 +216,7 @@ def get_item_tier(score):
 # This function generates a prompt for the GPT model based on the slot and tier    
 def get_prompt_for_tier(slot, tier):
     prompts = {
-        1: f"Generate a cursed, disgusting, or mocking item name for a {slot}. Make it sound like a personal insult. Limit the name to 4 words or fewer.",
+        1: f"Generate a cursed, disgusting, or mocking item name for a {slot}. Use EXTREMELY TOXIC language. Limit the name to 4 words or fewer.",
         2: f"Generate a trashy or broken-sounding item name for a {slot}. It should feel low quality or disappointing. Limit the name to 4 words or fewer.",
         3: f"Generate a common, boring item name for a {slot}. Think basic fantasy gear. Limit the name to 4 words or fewer.",
         4: f"Generate a funny or cartoon-themed item name for a {slot}. Reference a well-known animated character or show. Limit the name to 4 words or fewer.",
@@ -379,7 +379,7 @@ with col1:
 with col2:
     st.markdown(f"## 🏆 High Score:")
     st.markdown(f"### `{st.session_state.high_score:,.2f}`")
-    
+
 # --- High Score Check ---
 if dps > st.session_state.high_score:
     st.session_state.high_score = dps
