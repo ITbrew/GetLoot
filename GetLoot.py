@@ -19,7 +19,12 @@ if not openai.api_key:
     st.warning("⚠️ OPENAI_API_KEY not found in .env. Check your file and restart the app.")
 
 # Display of main title
-st.title("GetLoot: Maximize DPS")
+st.markdown("""
+<h1 style='text-align: center; color: #bb00ff; font-size: 42px;'>
+    🧿 GetLoot: Maximize DPS
+</h1>
+""", unsafe_allow_html=True)
+
 
 st.markdown("""
 <div style='padding: 10px; background-color: #111; border-radius: 8px;'>
@@ -38,52 +43,52 @@ equipment_slots = ["Weapon", "Helmet", "Chest", "Gloves", "Boots", "Pants"]
 # Defines the ranges for each stat in each equipment slot
 slot_stat_ranges = {
     "Weapon": {
-        "base_damage": (10, 20),
-        "attack_speed": (1.0, 1.5),
-        "crit_chance": (0.1, 0.2),
-        "crit_damage": (1.5, 2.0),
-        "element_bonus": (1.2, 1.5),
-        "dot_chance": (0.1, 0.2),
+        "base_damage": (50, 1000),
+        "attack_speed": (1.0, 50.0),
+        "crit_chance": (0.1, 0.99),
+        "crit_damage": (2.0, 250.0),
+        "element_bonus": (1.2, 100.0),
+        "dot_chance": (0.1, 0.5),
     },
     "Helmet": {
-        "base_damage": (1, 4),
-        "attack_speed": (0.9, 1.1),
-        "crit_chance": (0.05, 0.1),
-        "crit_damage": (1.2, 1.5),
-        "element_bonus": (1.0, 1.2),
-        "dot_chance": (0.05, 0.1),
+        "base_damage": (20, 300),
+        "attack_speed": (0.9, 40.0),
+        "crit_chance": (0.05, 0.99),
+        "crit_damage": (1.5, 200.0),
+        "element_bonus": (1.0, 75.0),
+        "dot_chance": (0.05, 0.3),
     },
     "Chest": {
-        "base_damage": (4, 8),
-        "attack_speed": (0.8, 1.0),
-        "crit_chance": (0.03, 0.08),
-        "crit_damage": (1.3, 1.6),
-        "element_bonus": (1.1, 1.3),
-        "dot_chance": (0.04, 0.1),
+        "base_damage": (40, 600),
+        "attack_speed": (0.8, 80.0),
+        "crit_chance": (0.03, 0.95),
+        "crit_damage": (1.8, 150.0),
+        "element_bonus": (1.1, 120.0),
+        "dot_chance": (0.04, 0.4),
     },
     "Gloves": {
-        "base_damage": (2, 6),
-        "attack_speed": (1.0, 1.4),
-        "crit_chance": (0.06, 0.12),
-        "crit_damage": (1.4, 1.7),
-        "element_bonus": (1.0, 1.2),
-        "dot_chance": (0.03, 0.07),
+        "base_damage": (30, 500),
+        "attack_speed": (1.0, 60.0),
+        "crit_chance": (0.1, 0.95),
+        "crit_damage": (1.6, 100.0),
+        "element_bonus": (1.0, 90.0),
+        "dot_chance": (0.03, 0.25),
     },
     "Boots": {
-        "base_damage": (1, 3),
-        "attack_speed": (1.1, 1.3),
-        "crit_chance": (0.04, 0.09),
-        "crit_damage": (1.2, 1.4),
-        "element_bonus": (1.0, 1.1),
-        "dot_chance": (0.05, 0.12),
+        "base_damage": (15, 300),
+        "attack_speed": (1.1, 40.0),
+        "crit_chance": (0.04, 0.95),
+        "crit_damage": (1.3, 75.0),
+        "element_bonus": (1.0, 60.0),
+        "dot_chance": (0.05, 0.3),
     },
     "Pants": {
-        "base_damage": (3, 5),
-        "attack_speed": (0.95, 1.2),
-        "crit_chance": (0.04, 0.09),
-        "crit_damage": (1.3, 1.6),
-        "element_bonus": (1.1, 1.3),
-        "dot_chance": (0.04, 0.1),
+        "base_damage": (25, 400),
+        "attack_speed": (1.0, 55.0),
+        "crit_chance": (0.05, 0.95),
+        "crit_damage": (1.7, 90.0),
+        "element_bonus": (1.2, 80.0),
+        "dot_chance": (0.04, 0.35),
     },
 }
 
