@@ -216,13 +216,13 @@ def get_item_tier(score):
 # This function generates a prompt for the GPT model based on the slot and tier    
 def get_prompt_for_tier(slot, tier):
     prompts = {
-        1: f"Generate a cursed, disgusting, or mocking item name for a {slot}. Directly insult the user for having the item. Limit the name to 4 words or fewer.",
-        2: f"Generate a trashy or broken-sounding item name for a {slot}. It should feel low quality or disappointing. Limit the name to 4 words or fewer.",
-        3: f"Generate a common, boring item name for a {slot}. Think basic fantasy gear. Limit the name to 4 words or fewer.",
-        4: f"Generate a funny or cartoon-themed item name for a {slot}. Reference a well-known animated character, movie or tv show. Limit the name to 4 words or fewer.",
-        5: f"Generate a satirical or powerful-sounding item name for a {slot} that references a real political figure. Limit the name to 4 words or fewer.",
-        6: f"Generate a legendary item name for a {slot} that references a historical or mythological figure. Limit the name to 4 words or fewer.",
-        7: f"Generate a divine, godlike item name for a {slot}. It should be a religious or mythical Greek God type of Name. Limit the name to 4 words or fewer.",
+        1: f"Generate a cursed, disgusting, or mocking item name for a {slot}. Directly insult the user for having the item. Limit the name to 6 words or fewer.",
+        2: f"Generate a trashy or broken-sounding item name for a {slot}. It should feel low quality or disappointing. Limit the name to 6 words or fewer.",
+        3: f"Generate a common, boring item name for a {slot}. Think basic fantasy gear. Limit the name to 6 words or fewer.",
+        4: f"Generate a funny or cartoon-themed item name for a {slot}. Reference a well-known animated character, movie or tv show. Limit the name to 6 words or fewer.",
+        5: f"Generate a satirical or powerful-sounding item name for a {slot} that references a real political figure. Limit the name to 6 words or fewer.",
+        6: f"Generate a legendary item name for a {slot} that references a historical or mythological figure. Limit the name to 6 words or fewer.",
+        7: f"Generate a divine, godlike item name for a {slot}. It should be a religious or mythical Greek God type of Name. Limit the name to 6 words or fewer.",
 }   
 
     return prompts.get(tier, f"Generate an item name for a {slot}.")
