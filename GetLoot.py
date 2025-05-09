@@ -378,8 +378,8 @@ with col1:
 
 with col2:
     st.markdown(f"## 🏆 High Score:")
-    st.markdown(f"### `{st.session_state.high_score}`")
-
+    st.markdown(f"### `{st.session_state.high_score:,.2f}`")
+    
 # --- High Score Check ---
 if dps > st.session_state.high_score:
     st.session_state.high_score = dps
