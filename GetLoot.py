@@ -21,6 +21,17 @@ if not openai.api_key:
 # Display of main title
 st.title("GetLoot: Maximize DPS")
 
+st.markdown("""
+<div style='padding: 10px; background-color: #111; border-radius: 8px;'>
+    <p style='font-style: italic; font-size: 16px; color: #ccc; text-align: center;'>
+    🎉 Congratulations, Hero. You’ve done it.<br>
+    The dragons are dead, the loot is yours, and now... behold your item screen.<br>
+    All thats left is to chase the best loot endlessly, and the emptiness of faster clear speed. 
+    Great job beating the hit new ARPG Diablo of Exile #3. GGG / Bobby are proud of you.
+    </p>
+</div>
+""", unsafe_allow_html=True)
+
 # Defines the equipment slots
 equipment_slots = ["Weapon", "Helmet", "Chest", "Gloves", "Boots", "Pants"]
 
@@ -182,17 +193,17 @@ def render_item_name(name, tier):
 
 # This function determines the tier of an item based on its score
 def get_item_tier(score):
-    if score <= 3:
+    if score <= 20:
         return 1  # Cursed
-    elif score <= 20:
-        return 2  # Trash
     elif score <= 50:
+        return 2  # Trash
+    elif score <= 70:
         return 3  # Common
     elif score <= 80:
-        return 4  # Toon Gear
-    elif score <= 98:
+        return 4  # Toon
+    elif score <= 90:
         return 5  # Political
-    elif score <= 99:
+    elif score <= 98:
         return 6  # Legendary
     else:
         return 7  # Divine
