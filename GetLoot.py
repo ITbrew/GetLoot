@@ -200,11 +200,11 @@ def render_item_name(name, tier):
 def get_item_tier(score):
     if score <= 20:
         return 1  # Cursed
-    elif score <= 50:
+    elif score <= 40:
         return 2  # Trash
-    elif score <= 70:
+    elif score <= 50:
         return 3  # Common
-    elif score <= 80:
+    elif score <= 75:
         return 4  # Toon
     elif score <= 90:
         return 5  # Political
